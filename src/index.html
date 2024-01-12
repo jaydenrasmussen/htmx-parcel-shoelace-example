@@ -3,15 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <!-- Shoelace -->
+    <!-- Shoelace && petite-vue -->
     <script type="module" src="index.js"></script>
-    <!-- HTMX -->
-    <script src="htmx.ext.shoelace.js"></script>
-    <script src="../node_modules/htmx.org/dist/htmx.min.js" 
-      crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="./main.css">
   </head>
-  <body hx-ext="shoelace">
-    <sl-button>This is a shoelace button</sl-button>
+  <body id="app">
+    <div v-scope="{ localCount: 0 }">
+      <sl-button @click="store.inc" >{{ store.count }}</sl-button>
+    </div>
   </body>
 </html>
